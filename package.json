@@ -1,0 +1,31 @@
+{
+  "name": "bacro",
+  "version": "1.0.0",
+  "description": "To start your new Phoenix application:",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjt/bacro-phoenix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjt/bacro-phoenix/issues"
+  },
+  "homepage": "https://github.com/jjt/bacro-phoenix#readme",
+  "devDependencies": {
+    "babel-core": "^5.8.19",
+    "babel-eslint": "^4.0.5",
+    "babel-loader": "^5.3.2",
+    "eslint": "^0.24.1",
+    "eslint-loader": "^0.14.2",
+    "eslint-plugin-react": "^3.1.0",
+    "webpack": "^1.10.5"
+  }
+}
