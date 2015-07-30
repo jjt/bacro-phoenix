@@ -1,7 +1,7 @@
 defmodule Bacro.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
-  def change do
+  def up do
     create table(:users) do
       add :email, :string
       add :username, :string
@@ -12,6 +12,9 @@ defmodule Bacro.Repo.Migrations.CreateUser do
     end
 
     create index(:users, [:email], unique: true)
+  end
 
+  def down do
+    drop table(:users)
   end
 end
