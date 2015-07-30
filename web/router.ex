@@ -1,5 +1,6 @@
 defmodule Bacro.Router do
   use Bacro.Web, :router
+  use Addict.RoutesHelper
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,6 +15,7 @@ defmodule Bacro.Router do
 
   scope "/", Bacro do
     pipe_through :browser # Use the default browser stack
+    addict :routes
 
     get "/", PageController, :index
   end
