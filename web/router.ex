@@ -18,6 +18,7 @@ defmodule Bacro.Router do
     addict :routes
 
     get "/", PageController, :index
+    get "/register", AuthController, :register
   end
 
   # Other scopes may use custom stacks.
