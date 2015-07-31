@@ -15,10 +15,14 @@ defmodule Bacro.Router do
 
   scope "/", Bacro do
     pipe_through :browser # Use the default browser stack
-    addict :routes
 
     get "/", PageController, :index
-    get "/register", AuthController, :register
+    get "/auth/register", AuthController, :register
+  end
+
+  scope "/" do
+    pipe_through :browser
+    addict :routes
   end
 
   # Other scopes may use custom stacks.
