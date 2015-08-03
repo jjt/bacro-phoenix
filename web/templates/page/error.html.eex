@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h2>BACRO</h2>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>It's a game!</h4>
+    <p>BLAH BLAH BLAH</p>
+  </div>
+
+  <div class="col-lg-6">
+    <h4>Login</h4>
+    <%= render Bacro.AuthView, "login.form.html", conn: @conn %>
+    <p>Or <a href="<%= auth_path @conn, :register %>">Register</a></p>
+  </div>
+</div>

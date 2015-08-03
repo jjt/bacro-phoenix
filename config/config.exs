@@ -20,7 +20,7 @@ config :logger, :console,
   metadata: [:request_id]
 
 # Addict
-config :addict, not_logged_in_url: "/error",  # the URL where users will be redirected to
+config :addict, not_logged_in_url: "/not-logged-in",  # the URL where users will be redirected to
                 db: Bacro.Repo,
                 user: Bacro.User,
                 register_from_email: "Registration <welcome@yourawesomeapp.com>", # email registered users will receive from address
