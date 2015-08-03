@@ -1,4 +1,4 @@
-%{"addict": {:hex, :addict, "0.0.5"},
+%{"addict": {:git, "git://github.com/trenpixster/addict.git", "41ccb76296e26acbabaa13a446515a2bbfcd1be2", []},
   "comeonin": {:hex, :comeonin, "0.11.3"},
   "cowboy": {:hex, :cowboy, "1.0.2"},
   "cowlib": {:hex, :cowlib, "1.0.1"},

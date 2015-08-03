@@ -35,6 +35,6 @@ defmodule Bacro.Mixfile do
      {:phoenix_html, "~> 1.4"},
      {:phoenix_live_reload, "~> 0.5", only: :dev},
      {:cowboy, "~> 1.0"},
-     {:addict, ">= 0.0.0"}]
+     {:addict, github: "trenpixster/addict"}]
   end
 end
