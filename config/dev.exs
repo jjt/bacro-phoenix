@@ -33,3 +33,5 @@ config :bacro, Bacro.Repo,
   password: "postgres",
   database: "bacro_dev",
   size: 10 # The amount of database connections in the pool
+
+import_config "dev.secret.exs"
