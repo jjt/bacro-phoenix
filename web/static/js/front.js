@@ -2,7 +2,6 @@ import 'css/front.css';
 import xr from 'xr';
 
 const qs = document.querySelector.bind(document);
-const qsa = document.querySelectorAll.bind(document);
 
 const front = {
   init() {
@@ -23,10 +22,14 @@ const front = {
         };
 
         xr.post(url, postData)
-          .then(res => {
-            window.location.reload()
+          .then((res) => {
+            window.location.reload();
           })
-          .catch(err => console.log(err));
+          .catch((err) => {
+            /* eslint-disable no-console */
+            console.log(err);
+            /* eslint-enable no-console */
+          });
       });
     }
   },
