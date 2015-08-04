@@ -1,10 +1,17 @@
 defmodule Bacro.PageController do
   use Bacro.Web, :controller
 
-  plug Addict.Plugs.Authenticated when action in [:secret, :game]
-
   def index(conn, _params) do
-    render conn, "index.html"
+    conn = fetch_session(conn)
+    session = get_session(conn, :current_user)
+
+    require Addict.Plugs.Authenticated
+    if Addict.Plugs.Authenticated.is_logged_in(conn) do
+      assign(conn, :current_user, session)
+      render conn, "game.html"
+    else
+      render conn, "index.html"
+    end
   end
 
   def error(conn, _params) do
