@@ -1,5 +1,5 @@
-import xr from 'xr';
 import 'css/front.css';
+import xr from 'xr';
 
 const qs = document.querySelector.bind(document);
 const qsa = document.querySelectorAll.bind(document);
@@ -23,7 +23,9 @@ const front = {
         };
 
         xr.post(url, postData)
-          .then(res => console.log(res.data))
+          .then(res => {
+            window.location.reload()
+          })
           .catch(err => console.log(err));
       });
     }
