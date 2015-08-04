@@ -1,7 +1,7 @@
 defmodule Bacro.PageController do
   use Bacro.Web, :controller
 
-  plug Addict.Plugs.Authenticated when action in [:secret]
+  plug Addict.Plugs.Authenticated when action in [:secret, :game]
 
   def index(conn, _params) do
     render conn, "index.html"
@@ -17,6 +17,10 @@ defmodule Bacro.PageController do
 
   def secret(conn, _params) do
     render conn, "secret.html"
+  end
+
+  def game(conn, _params) do
+    render conn, "game.html"
   end
 
 end
