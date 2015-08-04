@@ -18,7 +18,6 @@ defmodule Bacro.Router do
 
     # Basically a single page app
     get "/", PageController, :index
-    get "/lobby", PageController, :index
     get "/game/:game_id", PageController, :index
   end
 
