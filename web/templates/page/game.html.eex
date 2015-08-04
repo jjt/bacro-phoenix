@@ -1,5 +1,8 @@
 <div class="jumbotron">
-  <h2>BACRO</h2>
+  <h2>
+    BACRO
+    <a href="<%= auth_path(@conn, :logout) %>">Logout</a>
+  </h2>
 </div>
 
 <div> GAME GAME GAME </div>

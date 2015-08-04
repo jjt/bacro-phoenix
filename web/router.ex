@@ -16,12 +16,19 @@ defmodule Bacro.Router do
   scope "/", Bacro do
     pipe_through :browser # Use the default browser stack
 
+    # Basically a single page app
     get "/", PageController, :index
     get "/lobby", PageController, :index
     get "/game/:game_id", PageController, :index
+  end
+
+  scope "/", Bacro do
+    pipe_through :browser
 
     get "/register", AuthController, :register
+    get "/logout", AuthController, :logout
   end
+
 
   scope "/" do
     pipe_through :browser
