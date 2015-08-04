@@ -3,8 +3,8 @@ _build
 db
 deps
 *.ez
-priv/web/static/js
-priv/web/static/css
+priv/static/js
+priv/static/css
 
 # Generate on crash by the VM
 erl_crash.dump
