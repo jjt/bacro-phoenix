@@ -17,12 +17,10 @@ defmodule Bacro.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/game", PageController, :game
-    get "/error", PageController, :error
-    get "/secret", PageController, :secret
+    get "/lobby", PageController, :index
+    get "/game/:game_id", PageController, :index
 
-    get "/not-logged-in", AuthController, :not_logged_in
-    get "/auth/register", AuthController, :register
+    get "/register", AuthController, :register
   end
 
   scope "/" do
