@@ -17,6 +17,7 @@ defmodule Bacro.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/game", PageController, :game
     get "/error", PageController, :error
     get "/secret", PageController, :secret
 
