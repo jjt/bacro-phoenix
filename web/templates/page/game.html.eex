@@ -1,10 +1,2 @@
-<div class="jumbotron">
-  <h2>
-    BACRO
-    <a href="<%= auth_path(@conn, :logout) %>">Logout</a>
-  </h2>
-</div>
-
-<div> GAME GAME GAME </div>
-
+<div id="app">Loading...</div>
 <script src="<%= static_path(@conn, "/js/app.bundle.js") %>"></script>

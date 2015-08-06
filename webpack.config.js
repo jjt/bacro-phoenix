@@ -1,6 +1,8 @@
-path = require('path');
+/*eslint-disable*/
+var path = require('path');
 
 module.exports = {
+  devtool: 'source-map',
   entry: {
     app: './web/static/js/app.js',
     front: './web/static/js/front.js'
