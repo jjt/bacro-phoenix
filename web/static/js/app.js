@@ -7,7 +7,9 @@ import { Router, Route } from 'react-router';
 import * as reducers from './reducers';
 
 import App from './containers/App';
-import Game from './Game.js';
+
+import Game from './components/Game';
+import Lobby from './components/Lobby';
 
 import 'css/app.css';
 
@@ -20,7 +22,8 @@ const provider = (
   <Provider store={store}>
     {() => (
       <Router history={history}>
-        <Route path="/" component={App}>
+        <Route component={App}>
+          <Route path="/" component={Lobby} />
           <Route path="/game/:gameId" component={Game} />
         </Route>
       </Router>

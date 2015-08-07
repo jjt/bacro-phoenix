@@ -7,10 +7,8 @@ export default class ChatList extends Component {
     chats: PropTypes.array.isRequired,
   };
 
-  static getDefaultProps = () => {
-    return {
-      chats: [],
-    }
+  static defaultProps = {
+    chats: [],
   };
 
   render() {

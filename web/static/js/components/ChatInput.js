@@ -9,7 +9,7 @@ export default class ChatInput extends Component {
     return (
       <div>
         <form onSubmit={this.props.onChatSubmit}>
-          <input type='text' placeholder='Say sumthin, would ya?'/>
+          <input type="text" placeholder="Say sumthin, would ya?"/>
         </form>
       </div>
     );
