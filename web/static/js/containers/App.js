@@ -1,8 +1,8 @@
 import React from 'react';
-import { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
+import {Component, PropTypes} from 'react';
+import {Link} from 'react-router';
 
-class App extends Component {
+export default class App extends Component {
   static propTypes = {
     children: PropTypes.node,
   };
@@ -20,5 +20,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

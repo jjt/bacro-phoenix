@@ -1,13 +1,11 @@
 import React from 'react';
-import { history } from 'react-router/lib/BrowserHistory';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
-import { Router, Route } from 'react-router';
+import {createStore, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
+import {Router, Route} from 'react-router';
+import {history} from 'react-router/lib/BrowserHistory';
 
 import * as reducers from './reducers';
-
 import App from './containers/App';
-
 import Game from './components/Game';
 import Lobby from './components/Lobby';
 

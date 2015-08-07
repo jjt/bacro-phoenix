@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 
 export default class ChatItem extends Component {
   static propTypes = {
@@ -8,7 +8,7 @@ export default class ChatItem extends Component {
   };
 
   render() {
-    const { msg, user, time } = this.props;
+    const {msg, user, time} = this.props;
 
     return (
       <div>
