@@ -1,2 +1,7 @@
 <div id="app">Loading...</div>
-<script src="<%= static_path(@conn, "/js/app.bundle.js") %>"></script>
+
+<%= if Mix.env == :dev do %>
+  <script src='http://localhost:4001/app.bundle.js'></script>
+<% else %>
+  <script src="<%= static_path(@conn, "/js/app.bundle.js") %>"></script>
+<% end %>
