@@ -1,19 +1,18 @@
 import React from 'react';
-import { history } from 'react-router/lib/BrowserHistory';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
-import { batchedUpdates } from 'redux-batched-updates';
-import { Router, Route } from 'react-router';
+import {createStore, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
+import {Router, Route} from 'react-router';
+import {history} from 'react-router/lib/BrowserHistory';
 
 import * as reducers from './reducers';
-
 import App from './containers/App';
-import Game from './Game.js';
+import Game from './components/Game';
+import Lobby from './components/Lobby';
 
 import 'css/app.css';
 
 const reducer = combineReducers(reducers);
-const store = batchedUpdates(createStore)(reducer);
+const store = createStore(reducer);
 
 const $mountNode = document.getElementById('app');
 
@@ -21,7 +20,8 @@ const provider = (
   <Provider store={store}>
     {() => (
       <Router history={history}>
-        <Route path="/" component={App}>
+        <Route component={App}>
+          <Route path="/" component={Lobby} />
           <Route path="/game/:gameId" component={Game} />
         </Route>
       </Router>
