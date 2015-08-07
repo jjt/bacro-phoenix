@@ -2,7 +2,6 @@ import React from 'react';
 import { history } from 'react-router/lib/BrowserHistory';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import { batchedUpdates } from 'redux-batched-updates';
 import { Router, Route } from 'react-router';
 
 import * as reducers from './reducers';
@@ -13,7 +12,7 @@ import Game from './Game.js';
 import 'css/app.css';
 
 const reducer = combineReducers(reducers);
-const store = batchedUpdates(createStore)(reducer);
+const store = createStore(reducer);
 
 const $mountNode = document.getElementById('app');
 
