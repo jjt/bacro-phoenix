@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     app: './web/static/js/app.js',
-    front: './web/static/js/front.js'
+    front: './web/static/js/front.js',
   },
   module: {
     preLoaders: [
@@ -13,8 +13,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'eslint-loader',
         include: [
-          path.resolve(__dirname, 'web/static/js')
-        ]
+          path.resolve(__dirname, 'web/static/js'),
+        ],
       },
     ],
     loaders: [
@@ -22,8 +22,15 @@ module.exports = {
       {test: /\.css$/, exclude: /node_modules/, loader: 'style-loader!css-loader!postcss-loader'},
     ],
   },
+  postcss: function () {
+    return [
+      require('postcss-normalize'),
+      require('precss'),
+      require('lost'),
+    ];
+  },
   resolve: {
-    root: path.resolve('./web/static')
+    root: path.resolve('./web/static'),
   },
   output: {
     path: './priv/static/js',
