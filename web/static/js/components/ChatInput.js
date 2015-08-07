@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import findDOMNode from 'react/lib/findDOMNode';
-import {sendChat} from '../actions/ChatActions';
 
 export default class ChatInput extends Component {
   static propTypes = {

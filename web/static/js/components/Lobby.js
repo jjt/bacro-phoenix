@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import ChatContainer from '../containers/ChatContainer';
 
 export default class Lobby extends Component {

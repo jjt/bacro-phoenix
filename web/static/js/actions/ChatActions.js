@@ -6,5 +6,5 @@ export function sendChat(msg) {
     user: 'USERNAME',
     time: new Date().getTime(),
     type: types.SEND_CHAT,
-  }
+  };
 }
