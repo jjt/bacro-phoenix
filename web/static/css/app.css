@@ -1,3 +1,17 @@
+@lost flexbox flex;
+
+$bg: #f8f5f2;
+
+@import "./ChatItem.css";
+
 body {
-  background: white;
+  background: $bg;
+}
+
+.container {
+  lost-center: 980px;
+}
+
+.App-layout {
+  
 }

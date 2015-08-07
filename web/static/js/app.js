@@ -5,9 +5,10 @@ import {Router, Route} from 'react-router';
 import {history} from 'react-router/lib/BrowserHistory';
 
 import * as reducers from './reducers';
-import App from './containers/App';
-import Game from './components/Game';
-import Lobby from './components/Lobby';
+
+import AppLayout from './components/AppLayout';
+import GameLayout from './components/GameLayout';
+import LobbyLayout from './components/LobbyLayout';
 
 import 'css/app.css';
 
@@ -20,9 +21,9 @@ const provider = (
   <Provider store={store}>
     {() => (
       <Router history={history}>
-        <Route component={App}>
-          <Route path="/" component={Lobby} />
-          <Route path="/game/:gameId" component={Game} />
+        <Route component={AppLayout}>
+          <Route path="/" component={LobbyLayout} />
+          <Route path="/game/:gameId" component={GameLayout} />
         </Route>
       </Router>
     )}
