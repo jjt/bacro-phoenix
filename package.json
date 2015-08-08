@@ -27,6 +27,7 @@
     "eslint": "^0.24.1",
     "eslint-loader": "^0.14.2",
     "eslint-plugin-react": "^3.1.0",
+    "extract-text-webpack-plugin": "^0.8.2",
     "lost": "^6.5.0",
     "postcss": "^4.1.16",
     "postcss-loader": "^0.5.1",

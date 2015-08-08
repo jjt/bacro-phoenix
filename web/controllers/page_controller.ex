@@ -3,13 +3,12 @@ defmodule Bacro.PageController do
 
   def index(conn, _params) do
     require Addict.Plugs.Authenticated
+    require Plug.Conn
 
     conn = fetch_session(conn)
     session = get_session(conn, :current_user)
-    is_logged_in = Addict.Plugs.Authenticated.is_logged_in(session)
 
-    if is_logged_in do
-      assign(conn, :current_user, session)
+    if Addict.Plugs.Authenticated.is_logged_in(session) do
       render conn, "game.html"
     else
       if conn.request_path == "/" do

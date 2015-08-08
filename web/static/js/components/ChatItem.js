@@ -17,7 +17,7 @@ export default class ChatItem extends Component {
     return (
       <div className="ChatItem">
         <div className="ChatItem-header">
-          <span className="ChatItem-time">{shortTime(time)}</span> <strong>{user}</strong>: {msg}
+          <span className="ChatItem-time">{shortTime(time)}</span> <strong>{user}</strong> {msg}
         </div>
       </div>
     );
