@@ -1,8 +1,8 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import shortTime from '../utils/shortTime';
 
-import "css/ChatItem.css";
+import 'css/ChatItem.css';
 
 export default class ChatItem extends Component {
   static propTypes = {
@@ -12,7 +12,7 @@ export default class ChatItem extends Component {
   };
 
   render() {
-    const {msg, user, time} = this.props;
+    const { msg, user, time } = this.props;
 
     return (
       <div className="ChatItem">

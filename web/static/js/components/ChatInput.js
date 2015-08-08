@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import findDOMNode from 'react/lib/findDOMNode';
 
 export default class ChatInput extends Component {

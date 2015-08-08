@@ -1,7 +1,7 @@
-import React, {Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-import {sendChat} from '../actions/ChatActions';
+import { sendChat } from '../actions/ChatActions';
 import Chat from '../components/Chat';
 
 @connect(state => {

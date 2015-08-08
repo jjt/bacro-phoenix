@@ -1,6 +1,6 @@
 import React from 'react';
-import {Component, PropTypes} from 'react';
-import {Link} from 'react-router';
+import { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 export default class AppLayout extends Component {
   static propTypes = {
