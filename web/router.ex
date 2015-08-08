@@ -29,6 +29,11 @@ defmodule Bacro.Router do
     post "/login", AuthController, :login
   end
 
+  scope "/api", Bacro do
+    pipe_through :api
+
+    get "/test", ChatController, :test
+  end
 
   scope "/" do
     pipe_through :browser

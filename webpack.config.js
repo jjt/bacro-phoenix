@@ -9,7 +9,7 @@ var entry = './web/static/js/app.js';
 var publicPath = 'http://localhost:4001/';
 
 // Plugins and loaders
-var loaders = ['babel'];
+var loaders = ['babel?optional[]=runtime'];
 var plugins = [
   new webpack.NoErrorsPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
