@@ -9,7 +9,7 @@ var entry = './web/static/js/app.js';
 var publicPath = 'http://localhost:4001/';
 
 // Plugins and loaders
-var loaders = ['babel?optional[]=runtime'];
+var jsLoaders = ['babel?optional[]=runtime'];
 var plugins = [
   new webpack.NoErrorsPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
@@ -24,7 +24,7 @@ if (prod) {
   plugins.push(new webpack.optimize.UglifyJsPlugin());
 } else {
   plugins.push(new webpack.HotModuleReplacementPlugin());
-  loaders.unshift('react-hot');
+  jsLoaders.unshift('react-hot');
 }
 
 // Webpack config
@@ -41,7 +41,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: loaders},
+      {test: /\.js$/, include: /web\/static\/js/, loaders: jsLoaders},
       {test: /\.css$/, exclude: /node_modules/, loader: 'style-loader!css-loader!postcss-loader'},
     ],
   },
