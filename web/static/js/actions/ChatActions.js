@@ -1,9 +1,16 @@
 import { createAction } from 'redux-actions';
 
 import { sendMsg } from '../api/ChatAPI';
-import { SEND_CHAT } from '../constants/ActionTypes';
 
-const sendChat = createAction(SEND_CHAT, msg => {
+import {
+  SEND_CHAT,
+  VALIDATE_CHAT,
+} from '../constants/ActionTypes';
+
+export const sendChat = createAction(SEND_CHAT, sendMsg);
+
+// TODO: Optimistic actions
+const sendChatOptimisic = createAction(SEND_CHAT, msg => {
   // Send the request before returning optimistic chat
   setTimeout(sendMsg.bind(null, msg), 1000);
   return {
@@ -18,13 +25,10 @@ const sendChat = createAction(SEND_CHAT, msg => {
   };
 });
 
-export { sendChat }
-
-// export function sendChat(msg) {
-//   return {
-//     ...msg,
-//     user: 'USERNAME',
-//     time: new Date().getTime(),
-//     type: types.SEND_CHAT,
-//   };
-// }
+// Mark a chat as valid
+const validateChat = createAction(VALIDATE_CHAT, thing => {
+  return {
+    data: {},
+    meta: {},
+  }
+});

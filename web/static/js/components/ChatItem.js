@@ -12,10 +12,9 @@ export default class ChatItem extends Component {
   };
 
   render() {
-    const { data: { msg, user, time }, meta: { provisional } } = this.props;
-    const classes = classNames("ChatItem", {
-      "ChatItem-provisional": provisional,
-    });
+    const { data: { msg, user, time } } = this.props;
+    const classes = classNames("ChatItem");
+
     return (
       <div className={classes}>
         <div className="ChatItem-header">
