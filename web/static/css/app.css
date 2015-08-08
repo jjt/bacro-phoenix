@@ -2,8 +2,6 @@
 
 $bg: #f8f5f2;
 
-@import "./ChatItem.css";
-
 body {
   background: $bg;
 }
