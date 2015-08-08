@@ -2,6 +2,8 @@ import React, {Component, PropTypes} from 'react';
 
 import shortTime from '../utils/shortTime';
 
+import "css/ChatItem.css";
+
 export default class ChatItem extends Component {
   static propTypes = {
     msg: PropTypes.string.isRequired,
@@ -15,7 +17,7 @@ export default class ChatItem extends Component {
     return (
       <div className="ChatItem">
         <div className="ChatItem-header">
-          <em>{shortTime(time)}</em> <strong>{user}</strong>: {msg}
+          <span className="ChatItem-time">{shortTime(time)}</span> <strong>{user}</strong>: {msg}
         </div>
       </div>
     );

@@ -2,6 +2,12 @@
   margin-bottom: 0.4rem;
 }
 
+.ChatItem-time {
+  width: 3rem;
+  display: inline-block;
+  text-align: right;
+}
+
 .ChatItem-header {
   margin-bottom:0.2rem;
 }
