@@ -8,9 +8,8 @@ var prod = env === 'prod';
 var entry = './web/static/js/app.js';
 var publicPath = 'http://localhost:4001/';
 
+// Plugins and loaders
 var loaders = ['babel'];
-
-// Plugins
 var plugins = [
   new webpack.NoErrorsPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
@@ -19,6 +18,7 @@ var plugins = [
     minChunks: Infinity,
   }),
 ];
+
 if (prod) {
   plugins.push(new webpack.optimize.DedupePlugin());
   plugins.push(new webpack.optimize.UglifyJsPlugin());
@@ -27,8 +27,9 @@ if (prod) {
   loaders.unshift('react-hot');
 }
 
+// Webpack config
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: {
     app: prod ? entry : [
       'webpack-dev-server/client?' + publicPath,
