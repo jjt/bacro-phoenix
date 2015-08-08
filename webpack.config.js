@@ -5,12 +5,24 @@ var webpack = require('webpack');
 var env = process.env.MIX_ENV || 'dev';
 var prod = env === 'prod';
 
+// Get dependencies for vendor pack
+var deps = Object.keys(require('./package.json').dependencies);
+
 var entry = './web/static/js/app.js';
-var plugins = [new webpack.NoErrorsPlugin()];
-var loaders = ['babel'];
 var publicPath = 'http://localhost:4001/';
 
+var loaders = ['babel'];
+var plugins = [
+  new webpack.NoErrorsPlugin(),
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'vendor',
+    filename: 'vendor.js',
+    minChunks: Infinity,
+  }),
+];
+
 if (prod) {
+  plugins.push(new webpack.optimize.DedupePlugin());
   plugins.push(new webpack.optimize.UglifyJsPlugin());
 } else {
   plugins.push(new webpack.HotModuleReplacementPlugin());
@@ -26,6 +38,7 @@ module.exports = {
       'webpack/hot/only-dev-server',
       entry,
     ],
+    vendor: deps,
   },
   module: {
     loaders: [

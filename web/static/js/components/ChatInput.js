@@ -18,7 +18,7 @@ export default class ChatInput extends Component {
     return (
       <div>
         <form onSubmit={this.onChatSubmit}>
-          <input ref="msg" type="text" placeholder="Say sumthin, would ya?"/>
+          <input ref="msg" type="text" placeholder="SPEAK!"/>
         </form>
       </div>
     );
