@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 import shortTime from '../utils/shortTime';
 
@@ -6,16 +7,17 @@ import 'css/ChatItem.css';
 
 export default class ChatItem extends Component {
   static propTypes = {
-    msg: PropTypes.string.isRequired,
-    user: PropTypes.string.isRequired,
-    time: PropTypes.number.isRequired,
+    data: PropTypes.object.isRequired,
+    meta: PropTypes.object.isRequired,
   };
 
   render() {
-    const { msg, user, time } = this.props;
-
+    const { data: { msg, user, time }, meta: { provisional } } = this.props;
+    const classes = classNames("ChatItem", {
+      "ChatItem-provisional": provisional,
+    });
     return (
-      <div className="ChatItem">
+      <div className={classes}>
         <div className="ChatItem-header">
           <span className="ChatItem-time">{shortTime(time)}</span> <strong>{user}</strong> {msg}
         </div>

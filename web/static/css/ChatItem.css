@@ -1,5 +1,5 @@
 .ChatItem {
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 
 .ChatItem-time {
@@ -10,4 +10,8 @@
 
 .ChatItem-header {
   margin-bottom:0.2rem;
+}
+
+.ChatItem-provisional {
+  opacity: 0.4;
 }

@@ -14,12 +14,11 @@ const initialState = [
 ];
 
 export default function chats(state = initialState, action) {
-  console.log('chats reducer', state, action);
   switch (action.type) {
     case types.SEND_CHAT:
       return [
-        pick(action.payload, ['data', 'meta']),
         ...state,
+        pick(action.payload, ['data', 'meta']),
       ];
 
     default:

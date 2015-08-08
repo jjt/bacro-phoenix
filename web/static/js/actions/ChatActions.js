@@ -4,7 +4,6 @@ import { sendMsg } from '../api/ChatAPI';
 import { SEND_CHAT } from '../constants/ActionTypes';
 
 const sendChat = createAction(SEND_CHAT, msg => {
-  console.log('msg', msg);
   // Send the request before returning optimistic chat
   setTimeout(sendMsg.bind(null, msg), 1000);
   return {
