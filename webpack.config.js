@@ -5,13 +5,12 @@ var webpack = require('webpack');
 var env = process.env.MIX_ENV || 'dev';
 var prod = env === 'prod';
 
-// Get dependencies for vendor pack
-var deps = Object.keys(require('./package.json').dependencies);
-
 var entry = './web/static/js/app.js';
 var publicPath = 'http://localhost:4001/';
 
 var loaders = ['babel'];
+
+// Plugins
 var plugins = [
   new webpack.NoErrorsPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
@@ -20,7 +19,6 @@ var plugins = [
     minChunks: Infinity,
   }),
 ];
-
 if (prod) {
   plugins.push(new webpack.optimize.DedupePlugin());
   plugins.push(new webpack.optimize.UglifyJsPlugin());
@@ -32,13 +30,13 @@ if (prod) {
 module.exports = {
   devtool: 'source-map',
   entry: {
-    front: './web/static/js/front.js',
     app: prod ? entry : [
       'webpack-dev-server/client?' + publicPath,
       'webpack/hot/only-dev-server',
       entry,
     ],
-    vendor: deps,
+    // Get all deps from package.json
+    vendor: Object.keys(require('./package.json').dependencies),
   },
   module: {
     loaders: [

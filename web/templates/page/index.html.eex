@@ -14,5 +14,3 @@
     <p>Or <a href="<%= auth_path @conn, :register %>">Register</a></p>
   </div>
 </div>
-
-<script src="<%= static_path(@conn, "/js/front.bundle.js") %>"></script>

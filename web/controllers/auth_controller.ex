@@ -14,4 +14,20 @@ defmodule Bacro.AuthController do
     redirect(conn, to: "/")
   end
 
+  def login(conn, params) do
+    alias Addict.ManagerInteractor
+    alias Addict.SessionInteractor
+
+    email = params["email"]
+    password = params["password"]
+
+    {conn, result} = ManagerInteractor.verify_password(email, password)
+      |> SessionInteractor.login(conn)
+
+    if !Dict.has_key?(result, :user) do
+      conn = conn |> put_flash(:auth, "Error logging in with that password for #{email}")
+    end
+
+    redirect conn |> Map.put(:status, nil), to: "/"
+  end
 end

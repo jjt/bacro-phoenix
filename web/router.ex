@@ -26,6 +26,7 @@ defmodule Bacro.Router do
 
     get "/register", AuthController, :register
     get "/logout", AuthController, :logout
+    post "/login", AuthController, :login
   end
 
 
