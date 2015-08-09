@@ -6,7 +6,7 @@ export default class LobbyLayout extends Component {
     return (
       <div className="LobbyLayout">
         <div className="container">
-          <ChatContainer/>
+          <ChatContainer channel="lobby"/>
         </div>
       </div>
     );

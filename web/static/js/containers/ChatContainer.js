@@ -13,6 +13,7 @@ export default class ChatContainer extends Component {
   static propTypes = {
     chats: PropTypes.array,
     dispatch: PropTypes.func.isRequired,
+    channel: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
@@ -20,7 +21,7 @@ export default class ChatContainer extends Component {
   }
 
   onChat = (msg) => {
-    this.props.dispatch(sendChat({msg: msg}));
+    this.props.dispatch(sendChat({msg: msg, channel:this.props.channel}));
   }
 
   render() {

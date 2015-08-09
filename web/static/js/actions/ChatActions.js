@@ -9,6 +9,11 @@ import {
 
 export const sendChat = createAction(SEND_CHAT, sendMsg);
 
+
+
+
+
+
 // TODO: Optimistic actions
 const sendChatOptimisic = createAction(SEND_CHAT, msg => {
   // Send the request before returning optimistic chat

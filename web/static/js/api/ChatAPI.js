@@ -4,12 +4,8 @@ import globals from '../utils/globals';
 
 const chatRoot = '/api/chat';
 
-export function sendMsg(msg) {
+export function sendMsg(data) {
   return xr.post(`${chatRoot}/msg`, {
-    data: {
-      type: 'msg',
-      msg: msg,
-      user: globals.user
-    },
+    data: data,
   });
 }
