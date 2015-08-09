@@ -8,6 +8,7 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :bacro, Bacro.Endpoint,
   http: [port: 4000],
+  url: [host: "bacro.localdev.com"],
   debug_errors: true,
   code_reloader: true,
   cache_static_lookup: false,

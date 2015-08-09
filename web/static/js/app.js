@@ -6,6 +6,7 @@ import { history } from 'react-router/lib/BrowserHistory';
 import promiseMiddleware from 'redux-promise';
 
 import * as reducers from './reducers';
+import { socketConnect } from './actions/ChatActions';
 
 import AppLayout from './components/AppLayout';
 import GameLayout from './components/GameLayout';
@@ -16,10 +17,7 @@ import 'css/app.css';
 const reducer = combineReducers(reducers);
 const store = applyMiddleware(promiseMiddleware)(createStore)(reducer);
 
-import { testJson } from './actions/TestActions';
-store.dispatch(testJson(42));
-
-const $mountNode = document.getElementById('app');
+store.dispatch(socketConnect());
 
 const provider = (
   <Provider store={store}>
@@ -34,6 +32,6 @@ const provider = (
   </Provider>
 );
 
-React.render(provider, $mountNode);
+React.render(provider, document.getElementById('app'));
 
 export default provider;

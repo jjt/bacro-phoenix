@@ -1,13 +1,27 @@
 import { createAction } from 'redux-actions';
 
-import { sendMsg } from '../api/ChatAPI';
-
 import {
   SEND_CHAT,
+  SOCKET_CONNECT,
+  JOIN_CHANNEL,
   VALIDATE_CHAT,
 } from '../constants/ActionTypes';
 
-export const sendChat = createAction(SEND_CHAT, sendMsg);
+// export const sendChat = createAction(SEND_CHAT, sendMsg);
+export const sendChat = createAction(SEND_CHAT, msg => {
+  console.log(msg);
+  return;
+});
+export const socketConnect = createAction(SOCKET_CONNECT, () => {
+  return {
+    socket: 'connect',
+  };
+});
+export const joinChannel = createAction(JOIN_CHANNEL, channel => {
+  return {
+    channel: channel,
+  };
+});
 
 
 

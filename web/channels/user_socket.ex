@@ -2,7 +2,7 @@ defmodule Bacro.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Bacro.RoomChannel
+  channel "rooms:*", Bacro.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

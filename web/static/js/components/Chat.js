@@ -9,6 +9,7 @@ export default class Chat extends Component {
   };
 
   render() {
+    console.log(this.props.chats);
     return (
       <div>
         <ChatList chats={this.props.chats}/>
