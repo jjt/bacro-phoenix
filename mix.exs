@@ -33,7 +33,7 @@ defmodule Bacro.Mixfile do
      {:phoenix_ecto, "~> 0.8"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 1.4"},
-     {:phoenix_live_reload, "~> 0.5", only: :dev},
+     {:phoenix_live_reload, "~> 0.6", only: :dev},
      {:cowboy, "~> 1.0"},
      {:addict, github: "trenpixster/addict"}]
   end

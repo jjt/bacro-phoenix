@@ -16,10 +16,7 @@ const initialState = [
 export default function chats(state = initialState, action) {
   switch (action.type) {
     case types.SEND_CHAT:
-      return [
-        ...state,
-        pick(action.payload, ['data', 'meta']),
-      ];
+      return state;
 
     default:
       return state;
