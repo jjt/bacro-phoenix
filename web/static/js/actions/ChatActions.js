@@ -10,7 +10,7 @@ import {
 
 // export const sendChat = createAction(SEND_CHAT, sendMsg);
 export const sendChat = createAction(SEND_CHAT, obj => {
-  console.log('sentChat', obj);
+  console.log('sentChat', obj.channel);
   obj.channel.push("msg", {msg: obj.msg});
   return;
 });
@@ -26,7 +26,7 @@ export const socketConnect = createAction(SOCKET_CONNECT, () => {
 export const joinChannel = createAction(JOIN_CHANNEL, args => {
   console.log('joinChannel', args);
   const channel = args.socket.channel(`rooms:${args.channel}`, {});
-  
+
   // TODO: remove these debugging statements, find better spot for handing incoming msgs
   channel.join().receive('ok', chan => console.log(`Connected to ${args.channel}`));
   channel.on('msg', payload => console.log('MSG payload', payload));

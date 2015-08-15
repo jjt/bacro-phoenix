@@ -20,7 +20,7 @@ export default class LobbyLayout extends Component {
   componentDidMount = () => {
     this.props.dispatch(joinChannel({
       socket: this.props.socket.socket,
-      channel: 'lobby',
+      channel: 'arstartaft',
     }));
   }
 
