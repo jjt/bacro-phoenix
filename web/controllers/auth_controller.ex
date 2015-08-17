@@ -24,7 +24,12 @@ defmodule Bacro.AuthController do
     {conn, result} = ManagerInteractor.verify_password(email, password)
       |> SessionInteractor.login(conn)
 
-    if !Dict.has_key?(result, :user) do
+    if Dict.has_key?(result, :user) do
+      alias Phoenix.Token
+      require IO
+      IO.inspect result
+      IO.inspect conn.private.plug_session
+    else
       conn = conn |> put_flash(:auth, "Error logging in with that password for #{email}")
     end
 

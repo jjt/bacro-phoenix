@@ -3,7 +3,7 @@
 <script>
   // TODO: find a better way to pass data from Elixir to JS
   var BACRO_GLOBALS_EWW_GROSS = {
-    user: '<%= user @conn %>'
+    username: '<%= username @conn %>'
   };
 </script>
 
